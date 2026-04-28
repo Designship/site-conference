@@ -83,3 +83,15 @@
 /assets/studio-design-assets/projects/RQqJk5Zag0/s-1000x1000_v-fs_webp_bac7b4a7-0f57-4a64-8dfa-288dc2b94c00.png filter=lfs diff=lfs merge=lfs -text
 /assets/studio-design-assets/projects/RQqJk5Zag0/s-1800x1200_v-frms_webp_e5d8373e-2d41-453c-8c0c-c663fb574380.png filter=lfs diff=lfs merge=lfs -text
 /assets/studio-design-assets/projects/RQqJk5Zag0/s-2400x1868_v-frms_webp_f578ce1a-3b18-4002-984c-c7a44c91f52d.png filter=lfs diff=lfs merge=lfs -text
+
+# glob patterns added so newly-added images auto-track to LFS
+*.webp  filter=lfs diff=lfs merge=lfs -text
+*.png   filter=lfs diff=lfs merge=lfs -text
+*.jpg   filter=lfs diff=lfs merge=lfs -text
+*.jpeg  filter=lfs diff=lfs merge=lfs -text
+*.gif   filter=lfs diff=lfs merge=lfs -text
+*.mp4   filter=lfs diff=lfs merge=lfs -text
+*.webm  filter=lfs diff=lfs merge=lfs -text
+*.mov   filter=lfs diff=lfs merge=lfs -text
+*.woff2 filter=lfs diff=lfs merge=lfs -text
+*.woff  filter=lfs diff=lfs merge=lfs -text
