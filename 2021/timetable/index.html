@@ -13,12 +13,12 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Montserrat:wght@500;700;800&display=swap">
 <style>
   :root {
-    --bg: #0e0f1a;
-    --surface: #1a1d2b;
-    --line: #2c3047;
+    --bg: #1b1d28;
+    --surface: #2a2d3a;
+    --line: #3b3e4d;
     --muted: #9aa1bb;
-    --accent: #ff5b87;
-    --accent-soft: rgba(255, 91, 135, 0.18);
+    --accent: #da297b;
+    --accent-soft: rgba(218, 41, 123, 0.18);
   }
   * { box-sizing: border-box; }
   html, body { margin: 0; padding: 0; }
@@ -79,8 +79,9 @@
   .session .type.sponsor { background: rgba(255, 200, 0, 0.18); color: #ffd87a; border-color: transparent; }
   .session .type.open    { background: rgba(120, 240, 200, 0.18); color: #8df0d0; border-color: transparent; }
   .session .company { font-weight: 700; font-size: 17px; margin: 0 0 6px; color: #fff; }
-  .session .sponsor-pair { padding: 10px 0; border-top: 1px dashed var(--line); }
-  .session .sponsor-pair:first-child { padding-top: 0; border-top: none; }
+  .session .sponsor-pair { padding: 14px 0 6px; }
+  .session .sponsor-pair:first-of-type { padding-top: 0; }
+  .session .sponsor-pair + .sponsor-pair { border-top: 1px dashed var(--line); }
   .session .speaker { font-weight: 700; font-size: 17px; margin: 0 0 6px; }
   .session .title {
     margin: 6px 0 0;
@@ -125,10 +126,10 @@
   <div class="container header-inner">
     <a class="brand" href="/2021/">Designship 2021</a>
     <nav class="site-nav">
+      <a href="/2021/open-session/">Open Session</a>
       <a href="/2021/">Top</a>
       <a href="/2021/session/">Session</a>
       <a href="/2021/timetable/" aria-current="page">Timetable</a>
-      <a href="/2021/sponsor/">Sponsor</a>
     </nav>
   </div>
 </header>
@@ -144,19 +145,19 @@
     <li><time>12:10</time><div class="session"><span class="type keynote">Keynote</span><p class="speaker">深澤直人</p><p class="title">「今デザインにできること」</p></div></li>
     <li><time>12:50</time><div class="session"><span class="type sponsor">Sponsor</span><div class="sponsor-pair"><p class="company">株式会社メルカリ</p></div></div></li>
     <li><time>13:00</time><div class="session"><span class="type open">公募</span><p class="speaker">YING ZHONG</p><p class="title">「パンデミック下における海外プロジェクト推進のためのデザインアプローチの工夫」</p></div></li>
-    <li><time>13:20</time><div class="session"><span class="type ">休憩</span><p class="title">13:30-14:50 Q&Aセッション<br>深澤直人、YING ZHONG</p></div></li>
+    <li><time>13:20</time><div class="session"><span class="type qa">Q&A</span><p class="title">深澤直人、YING ZHONG</p></div></li>
     <li><time>14:00</time><div class="session"><span class="type open">公募</span><p class="speaker">鈴木一平</p><p class="title">「日常生活を共にする当事者と共創するアクセシビリティツールのデザイン」</p></div></li>
     <li><time>14:20</time><div class="session"><span class="type sponsor">Sponsor</span><div class="sponsor-pair"><p class="company">株式会社mediba
 ヤフー株式会社
 株式会社LegalForce
 株式会社モリサワ</p></div></div></li>
     <li><time>14:40</time><div class="session"><span class="type ">Collaboration</span><p class="speaker">GDA対談</p><p class="title">「井上さん＋みんなの銀行 中村さん」</p></div></li>
-    <li><time>15:20</time><div class="session"><span class="type ">休憩</span><p class="title">15:30-15:50 Q&Aセッション<br>鈴木一平、中村</p></div></li>
+    <li><time>15:20</time><div class="session"><span class="type qa">Q&A</span><p class="title">鈴木一平、中村 隆俊</p></div></li>
     <li><time>16:00</time><div class="session"><span class="type open">公募</span><p class="speaker">川西 康之</p><p class="title">「公共デザインの領域を超えて」</p></div></li>
     <li><time>16:20</time><div class="session"><span class="type sponsor">Sponsor</span><div class="sponsor-pair"><p class="company">ビジョナル株式会社
 株式会社サイバーエージェント</p></div></div></li>
     <li><time>16:40</time><div class="session"><span class="type open">公募</span><p class="speaker">田房 夏波</p><p class="title">「実店舗における顧客体験の実践と、海外デザイン大学院での探求」</p></div></li>
-    <li><time>17:00</time><div class="session"><span class="type ">休憩</span><p class="title">17:10-17:30 Q&Aセッション<br>川西 康之、田房 夏波</p></div></li>
+    <li><time>17:00</time><div class="session"><span class="type qa">Q&A</span><p class="title">川西 康之、田房 夏波</p></div></li>
     <li><time>17:40</time><div class="session"><span class="type open">公募</span><p class="speaker">篠原 健</p><p class="title">「デザイナーが作る新規事業で意識すること」</p></div></li>
     <li><time>18:00</time><div class="session"><span class="type sponsor">Sponsor</span><div class="sponsor-pair"><p class="company">株式会社ゆめみ 
 株式会社フラクタ</p></div></div></li>
@@ -174,14 +175,14 @@
     <li><time>14:10</time><div class="session"><span class="type sponsor">Sponsor</span><div class="sponsor-pair"><p class="company">株式会社ヤプリ
 フィヨルド</p></div></div></li>
     <li><time>14:30</time><div class="session"><span class="type keynote">Keynote</span><p class="speaker">井口皓太</p><p class="title">「クラフトマンシップの逆流」</p></div></li>
-    <li><time>15:10</time><div class="session"><span class="type ">休憩</span><p class="title">15:20-15:40 Q&Aセッション<br>井口皓太、荒井 康豪</p></div></li>
+    <li><time>15:10</time><div class="session"><span class="type qa">Q&A</span><p class="title">井口皓太、荒井 康豪</p></div></li>
     <li><time>15:50</time><div class="session"><span class="type open">公募</span><p class="speaker">小椋 浩佑</p><p class="title">「オルビス体験特化施設 「SKINCARE LOUNGE BY ORBIS」」</p></div></li>
     <li><time>16:10</time><div class="session"><span class="type sponsor">Sponsor</span><div class="sponsor-pair"><p class="company">ウォンテッドリー株式会社
 Mobility Technologies
 株式会社キュービック
 Notion</p></div></div></li>
     <li><time>16:30</time><div class="session"><span class="type open">公募</span><p class="speaker">古原 徹</p><p class="title">「缶ビールの常識を変えた！生ジョッキ缶のイノベーションについて」</p></div></li>
-    <li><time>16:50</time><div class="session"><span class="type ">休憩</span><p class="title">17:00-17:20 Q&Aセッション<br>小椋 浩佑、古原 徹</p></div></li>
+    <li><time>16:50</time><div class="session"><span class="type qa">Q&A</span><p class="title">小椋 浩佑、古原 徹</p></div></li>
     <li><time>17:30</time><div class="session"><span class="type open">公募</span><p class="speaker">Kanno Shu</p><p class="title">「逆襲のインダストリアルデザイン」</p></div></li>
     <li><time>17:50</time><div class="session"><span class="type sponsor">Sponsor</span><div class="sponsor-pair"><p class="company">株式会社Sun Asterisk
 株式会社root
