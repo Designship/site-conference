@@ -18,41 +18,41 @@
     --line: #2c3047;
     --muted: #9aa1bb;
     --accent: #ff5b87;
+    --accent-soft: rgba(255, 91, 135, 0.18);
   }
   * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
   body {
-    margin: 0;
     background: var(--bg);
     color: #fff;
     font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     line-height: 1.6;
-    padding: 60px 16px 120px;
   }
-  .container {
-    max-width: 880px;
-    margin: 0 auto;
+  a { color: inherit; }
+  .container { max-width: 880px; margin: 0 auto; padding: 0 24px; }
+
+  /* header */
+  .site-header {
+    border-bottom: 1px solid var(--line);
+    background: rgba(14, 15, 26, 0.92);
+    backdrop-filter: blur(8px);
+    position: sticky; top: 0; z-index: 30;
   }
-  .breadcrumb {
-    margin-bottom: 32px;
-    font-size: 13px;
-    color: var(--muted);
+  .header-inner {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 16px 24px;
   }
-  .breadcrumb a { color: inherit; text-decoration: none; }
-  .breadcrumb a:hover { color: #fff; }
-  h1 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 48px;
-    letter-spacing: 0.04em;
-    margin: 0 0 8px;
-  }
-  .subtitle {
-    color: var(--muted);
-    font-size: 14px;
-    margin-bottom: 48px;
-  }
-  .day {
-    margin-bottom: 64px;
-  }
+  .brand { font-family: 'Montserrat', sans-serif; font-weight: 800; letter-spacing: 0.06em; text-decoration: none; font-size: 18px; }
+  .site-nav { display: flex; gap: 18px; font-size: 13px; }
+  .site-nav a { text-decoration: none; color: var(--muted); }
+  .site-nav a:hover, .site-nav a[aria-current="page"] { color: #fff; }
+
+  /* main */
+  main { padding: 56px 0 80px; }
+  h1 { font-family: 'Montserrat', sans-serif; font-size: 48px; letter-spacing: 0.04em; margin: 0 0 8px; }
+  .subtitle { color: var(--muted); font-size: 14px; margin-bottom: 48px; }
+
+  .day { margin-bottom: 64px; }
   .day h2 {
     font-family: 'Montserrat', sans-serif;
     font-size: 28px;
@@ -61,106 +61,150 @@
     padding-bottom: 16px;
     border-bottom: 2px solid var(--accent);
   }
-  .note {
-    color: var(--muted);
-    font-size: 12px;
-    margin-bottom: 24px;
-  }
-  ol.list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
+  ol.list { list-style: none; padding: 0; margin: 0; }
   ol.list li {
-    display: grid;
-    grid-template-columns: 88px 1fr;
-    gap: 24px;
-    padding: 18px 0;
-    border-top: 1px solid var(--line);
+    display: grid; grid-template-columns: 88px 1fr; gap: 24px;
+    padding: 22px 0; border-top: 1px solid var(--line);
   }
   ol.list li:last-child { border-bottom: 1px solid var(--line); }
-  time {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    font-size: 20px;
-    color: #fff;
-  }
+  time { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 20px; color: #fff; }
   .session .type {
-    display: inline-block;
-    padding: 3px 10px;
-    background: var(--surface);
-    border: 1px solid var(--line);
-    border-radius: 999px;
-    font-size: 11px;
-    letter-spacing: 0.06em;
-    color: var(--muted);
-    margin-bottom: 8px;
+    display: inline-block; padding: 3px 10px;
+    background: var(--surface); border: 1px solid var(--line);
+    border-radius: 999px; font-size: 11px; letter-spacing: 0.06em;
+    color: var(--muted); margin-bottom: 10px;
   }
-  .session .type.keynote { background: rgba(255, 91, 135, 0.15); color: #ff8aac; border-color: transparent; }
-  .session .type.qa { background: rgba(94, 168, 255, 0.15); color: #8ec0ff; border-color: transparent; }
-  .session .speaker {
-    font-weight: 700;
-    font-size: 17px;
-    margin: 0 0 4px;
-  }
+  .session .type.keynote { background: var(--accent-soft); color: #ff8aac; border-color: transparent; }
+  .session .type.qa      { background: rgba(94, 168, 255, 0.18); color: #8ec0ff; border-color: transparent; }
+  .session .type.sponsor { background: rgba(255, 200, 0, 0.18); color: #ffd87a; border-color: transparent; }
+  .session .type.open    { background: rgba(120, 240, 200, 0.18); color: #8df0d0; border-color: transparent; }
+  .session .company { font-weight: 700; font-size: 17px; margin: 0 0 6px; color: #fff; }
+  .session .sponsor-pair { padding: 10px 0; border-top: 1px dashed var(--line); }
+  .session .sponsor-pair:first-child { padding-top: 0; border-top: none; }
+  .session .speaker { font-weight: 700; font-size: 17px; margin: 0 0 6px; }
   .session .title {
-    margin: 0;
-    color: #ccd0e3;
-    font-size: 14px;
+    margin: 6px 0 0;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.55;
+    padding: 8px 14px;
+    background: rgba(255, 91, 135, 0.10);
+    border-left: 3px solid var(--accent);
+    border-radius: 4px;
   }
+
+  /* footer */
+  .site-footer {
+    border-top: 1px solid var(--line);
+    padding: 40px 0 60px;
+    margin-top: 32px;
+    text-align: center;
+  }
+  .footer-nav { display: flex; flex-wrap: wrap; gap: 14px 22px; justify-content: center; margin-bottom: 16px; font-size: 13px; }
+  .footer-nav.small { font-size: 12px; color: var(--muted); }
+  .footer-nav a { text-decoration: none; }
+  .footer-nav a:hover { color: var(--accent); }
+  .copy { color: var(--muted); font-size: 11px; letter-spacing: 0.12em; margin-top: 18px; }
+
   @media (max-width: 540px) {
-    body { padding: 32px 16px 80px; }
+    .header-inner { flex-direction: column; gap: 12px; padding: 12px 24px; align-items: center; }
+    main { padding: 36px 0 60px; }
     h1 { font-size: 36px; }
-    ol.list li { grid-template-columns: 64px 1fr; gap: 16px; padding: 14px 0; }
+    .day h2 { font-size: 22px; }
+    ol.list li { grid-template-columns: 64px 1fr; gap: 16px; padding: 18px 0; }
     time { font-size: 16px; }
     .session .speaker { font-size: 15px; }
+    .session .title { font-size: 14px; }
   }
 </style>
 </head>
 <body>
-<div class="container">
-  <div class="breadcrumb"><a href="/2022/">Designship 2022</a> &nbsp;/&nbsp; Timetable</div>
-  <h1>Timetable</h1>
-  <div class="subtitle">セッションの開始時刻 / 終了時刻は進行状況により変動する可能性があります。ご了承ください。</div>
-  <section class="day">
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="/2022/">Designship 2022</a>
+    <nav class="site-nav">
+      <a href="/2022/">Top</a>
+      <a href="/2022/session/">Session</a>
+      <a href="/2022/timetable/" aria-current="page">Timetable</a>
+      <a href="/2022/sponsor/">Sponsor</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <h1>Timetable</h1>
+    <div class="subtitle">セッションの開始時刻 / 終了時刻は進行状況により変動する可能性があります。ご了承ください。</div>
+    <section class="day">
   <h2>2022.11.12 (Sat.)</h2>
   <ol class="list">
     <li><time>12:00</time><div class="session"><span class="type ">オープニング</span></div></li>
-    <li><time>12:10</time><div class="session"><span class="type keynote">Keynote</span><p class="speaker">太刀川 英輔</p><p class="title">デザインで未来の希望をつくるには</p></div></li>
-    <li><time>12:50</time><div class="session"><span class="type ">公募</span><p class="speaker">稲積 美紀</p><p class="title">メンズインナーから発信するレース素材の新しいスタイル</p></div></li>
-    <li><time>13:20</time><div class="session"><span class="type qa">Q&A</span><p class="title">太刀川＆稲積（プロダクトデザイン）</p></div></li>
-    <li><time>14:00</time><div class="session"><span class="type ">公募</span><p class="speaker">金田 麻衣子</p><p class="title">デザイナーが地域の中で実践と対話から見つけた「関与」の可能性</p></div></li>
-    <li><time>14:20</time><div class="session"><span class="type ">Sponsor</span><p class="title">ゆめみデザインエンジニアが語る、隣接領域を学ぶという事</p></div></li>
+    <li><time>12:10</time><div class="session"><span class="type keynote">Keynote</span><p class="speaker">太刀川 英輔</p><p class="title">「デザインで未来の希望をつくるには」</p></div></li>
+    <li><time>12:50</time><div class="session"><span class="type open">公募</span><p class="speaker">稲積 美紀</p><p class="title">「メンズインナーから発信するレース素材の新しいスタイル」</p></div></li>
+    <li><time>13:20</time><div class="session"><span class="type qa">Q&A</span><p class="title">太刀川 英輔＆稲積 美紀</p></div></li>
+    <li><time>14:00</time><div class="session"><span class="type open">公募</span><p class="speaker">金田 麻衣子</p><p class="title">「デザイナーが地域の中で実践と対話から見つけた「関与」の可能性」</p></div></li>
+    <li><time>14:20</time><div class="session"><span class="type sponsor">Sponsor</span><div class="sponsor-pair"><p class="company">ゆめみ</p><p class="title">「デザインエンジニアが語る、隣接領域を学ぶという事」</p></div></div></li>
     <li><time>14:40</time><div class="session"><span class="type keynote">Keynote</span><p class="speaker">森本 千絵</p></div></li>
-    <li><time>15:30</time><div class="session"><span class="type qa">Q&A</span><p class="title">金田＆森本（地域とエンタメ）</p></div></li>
-    <li><time>16:00</time><div class="session"><span class="type ">公募</span><p class="speaker">小松 岳</p><p class="title">すべての人の移動を楽しくスマートにする、シニア世代のためのモビリティデザイン</p></div></li>
-    <li><time>16:20</time><div class="session"><span class="type ">Sponsor</span><p class="title">キュービック　組織全員レビューで目指した「高品質」を生み出すUIデザイナーへの300日の歩み、<br>日立　画面の周りに広がるユーザーの世界をデザインする<br>YOUTRUSTキャリア・オポチュニティを生み出す「YOUTRUST」とは？<br>クラスターメタバースのデザイン・魅力・面白さ<br>モリサワ文字とつながる 世界がひろがる 新サービス「Morisawa Fonts」と新書体<br>note</p></div></li>
-    <li><time>16:40</time><div class="session"><span class="type ">公募</span><p class="speaker">中島 亮太郎</p><p class="title">なぜ、フィジカルとデジタルのデザインは分かれてしまうのか？</p></div></li>
-    <li><time>17:10</time><div class="session"><span class="type qa">Q&A</span><p class="title">小松＆中島（フィジカル）</p></div></li>
-    <li><time>17:40</time><div class="session"><span class="type ">公募</span><p class="speaker">鈴木 友里恵</p><p class="title">宇宙開発から再発見するデザインの力</p></div></li>
-    <li><time>18:00</time><div class="session"><span class="type ">Sponsor</span><p class="title">VisionalBlend the DESIGN - 融ける“デザインのチカラ”、<br>富士通23歳インハウスデザイナーが考える社会課題とデザイン</p></div></li>
-    <li><time>18:20</time><div class="session"><span class="type keynote">Keynote</span><p class="speaker">濱口 秀司</p><p class="title">ビジネスデザイン</p></div></li>
+    <li><time>15:30</time><div class="session"><span class="type qa">Q&A</span><p class="title">金田 麻衣子＆森本 千絵</p></div></li>
+    <li><time>16:00</time><div class="session"><span class="type open">公募</span><p class="speaker">小松 岳</p><p class="title">「すべての人の移動を楽しくスマートにする、シニア世代のためのモビリティデザイン」</p></div></li>
+    <li><time>16:20</time><div class="session"><span class="type sponsor">Sponsor</span><div class="sponsor-pair"><p class="company">キュービック</p><p class="title">「組織全員レビューで目指した「高品質」を生み出すUIデザイナーへの300日の歩み」</p></div><div class="sponsor-pair"><p class="company">日立</p><p class="title">「画面の周りに広がるユーザーの世界をデザインする」</p></div><div class="sponsor-pair"><p class="company">YOUTRUST</p><p class="title">「キャリア・オポチュニティを生み出す「YOUTRUST」とは？」</p></div><div class="sponsor-pair"><p class="company">クラスター</p><p class="title">「メタバースのデザイン・魅力・面白さ」</p></div><div class="sponsor-pair"><p class="company">モリサワ</p><p class="title">「文字とつながる 世界がひろがる 新サービス「Morisawa Fonts」と新書体」</p></div><div class="sponsor-pair"><p class="company">note</p></div></div></li>
+    <li><time>16:40</time><div class="session"><span class="type open">公募</span><p class="speaker">中島 亮太郎</p><p class="title">「なぜ、フィジカルとデジタルのデザインは分かれてしまうのか？」</p></div></li>
+    <li><time>17:10</time><div class="session"><span class="type qa">Q&A</span><p class="title">小松 岳＆中島 亮太郎</p></div></li>
+    <li><time>17:40</time><div class="session"><span class="type open">公募</span><p class="speaker">鈴木 友里恵</p><p class="title">「宇宙開発から再発見するデザインの力」</p></div></li>
+    <li><time>18:00</time><div class="session"><span class="type sponsor">Sponsor</span><div class="sponsor-pair"><p class="company">Visional</p><p class="title">「Blend the DESIGN - 融ける“デザインのチカラ”」</p></div><div class="sponsor-pair"><p class="company">富士通</p><p class="title">「23歳インハウスデザイナーが考える社会課題とデザイン」</p></div></div></li>
+    <li><time>18:20</time><div class="session"><span class="type keynote">Keynote</span><p class="speaker">濱口 秀司</p><p class="title">「ビジネスデザイン」</p></div></li>
   </ol>
 </section>
 <section class="day">
   <h2>2022.11.13 (Sun.)</h2>
   <ol class="list">
     <li><time>12:00</time><div class="session"><span class="type keynote">Keynote</span><p class="speaker">永井 一史</p></div></li>
-    <li><time>12:40</time><div class="session"><span class="type ">Sponsor</span><p class="title">アクセンチュア"Deep simplicity"　-シンプルさを組織レベルで貫き、インパクトを生み出す-<br>リクルート不確実性というデザインのパースペクティブ</p></div></li>
-    <li><time>13:00</time><div class="session"><span class="type ">公募</span><p class="speaker">團野 慎太郎</p><p class="title">テレビ局がオリジナルフォントを作った理由</p></div></li>
-    <li><time>13:30</time><div class="session"><span class="type qa">Q&A</span><p class="title">永井＆團野（ブランディング）</p></div></li>
-    <li><time>14:20</time><div class="session"><span class="type ">公募</span><p class="speaker">Sato Shoichi</p><p class="title">「越境するデザイン」- 未来とデザインとエンジニアリングを結ぶ</p></div></li>
-    <li><time>14:40</time><div class="session"><span class="type ">Sponsor</span><p class="title">ルート組織のデザイン実行力を高めるデザインプログラムマネジメント、<br>マネーフォワード成長するデザイン組織を目指して、<br>ヤフーイノベーションを掲げるLaboチームの役割、<br>パーソルキャリア、<br>セブンデックス、<br>ウエディングパーク会社と社員の幸せをデザインする『カルチャーデザイナー』</p></div></li>
-    <li><time>15:00</time><div class="session"><span class="type keynote">Keynote</span><p class="speaker">松井 龍哉</p><p class="title">ロボットと卵</p></div></li>
-    <li><time>15:50</time><div class="session"><span class="type qa">Q&A</span><p class="title">松井＆Sato（メカ）</p></div></li>
-    <li><time>16:20</time><div class="session"><span class="type ">公募</span><p class="speaker">坂東 淳子</p><p class="title">「情報をまとった建築」をデザインする</p></div></li>
-    <li><time>16:40</time><div class="session"><span class="type ">Sponsor</span><p class="title">NTT Data、<br>LegalForceリーガルテックにおけるUIデザイン、<br>ヤプリ「Yappli」におけるデザイナーの役割、<br>フラーデジタル時代を生き抜くデザイナーのあり方、<br>NEWh事業開発に必要なデザイナーとは？、<br>NEC心動かすデザインのチカラ</p></div></li>
-    <li><time>17:00</time><div class="session"><span class="type ">公募</span><p class="speaker">Morita Sachiko</p><p class="title">都市木造の新しい可能性～新幹線高架下での実践を通じて～</p></div></li>
-    <li><time>17:30</time><div class="session"><span class="type qa">Q&A</span><p class="title">坂東＆Morita（建築）</p></div></li>
-    <li><time>18:10</time><div class="session"><span class="type ">公募</span><p class="speaker">方山 れいこ</p><p class="title">障害のある社会をデザインでどう変えていくか？</p></div></li>
-    <li><time>18:30</time><div class="session"><span class="type keynote">Keynote</span><p class="speaker">面出 薫</p><p class="title">照明デザインの楽しさ<br>LPAと照明探偵団の活動を通じて…</p></div></li>
+    <li><time>12:40</time><div class="session"><span class="type sponsor">Sponsor</span><div class="sponsor-pair"><p class="company">アクセンチュア</p><p class="title">「"Deep simplicity"　-シンプルさを組織レベルで貫き、インパクトを生み出す-」</p></div><div class="sponsor-pair"><p class="company">リクルート</p><p class="title">「不確実性というデザインのパースペクティブ」</p></div></div></li>
+    <li><time>13:00</time><div class="session"><span class="type open">公募</span><p class="speaker">團野 慎太郎</p><p class="title">「テレビ局がオリジナルフォントを作った理由」</p></div></li>
+    <li><time>13:30</time><div class="session"><span class="type qa">Q&A</span><p class="title">永井 一史＆團野 慎太郎</p></div></li>
+    <li><time>14:20</time><div class="session"><span class="type open">公募</span><p class="speaker">Sato Shoichi</p><p class="title">「「越境するデザイン」- 未来とデザインとエンジニアリングを結ぶ」</p></div></li>
+    <li><time>14:40</time><div class="session"><span class="type sponsor">Sponsor</span><div class="sponsor-pair"><p class="company">ルート</p><p class="title">「組織のデザイン実行力を高めるデザインプログラムマネジメント」</p></div><div class="sponsor-pair"><p class="company">マネーフォワード</p><p class="title">「成長するデザイン組織を目指して」</p></div><div class="sponsor-pair"><p class="company">ヤフー</p><p class="title">「イノベーションを掲げるLaboチームの役割」</p></div><div class="sponsor-pair"><p class="company">パーソルキャリア、
+セブンデックス、
+ウエディングパーク</p><p class="title">「会社と社員の幸せをデザインする『カルチャーデザイナー』」</p></div></div></li>
+    <li><time>15:00</time><div class="session"><span class="type keynote">Keynote</span><p class="speaker">松井 龍哉</p><p class="title">「ロボットと卵」</p></div></li>
+    <li><time>15:50</time><div class="session"><span class="type qa">Q&A</span><p class="title">松井 龍哉＆Sato Shoichi</p></div></li>
+    <li><time>16:20</time><div class="session"><span class="type open">公募</span><p class="speaker">坂東 淳子</p><p class="title">「「情報をまとった建築」をデザインする」</p></div></li>
+    <li><time>16:40</time><div class="session"><span class="type sponsor">Sponsor</span><div class="sponsor-pair"><p class="company">NTT Data、
+LegalForce</p><p class="title">「リーガルテックにおけるUIデザイン」</p></div><div class="sponsor-pair"><p class="company">ヤプリ</p><p class="title">「「Yappli」におけるデザイナーの役割」</p></div><div class="sponsor-pair"><p class="company">フラー</p><p class="title">「デジタル時代を生き抜くデザイナーのあり方」</p></div><div class="sponsor-pair"><p class="company">NEWh</p><p class="title">「事業開発に必要なデザイナーとは？」</p></div><div class="sponsor-pair"><p class="company">NEC</p><p class="title">「心動かすデザインのチカラ」</p></div></div></li>
+    <li><time>17:00</time><div class="session"><span class="type open">公募</span><p class="speaker">Morita Sachiko</p><p class="title">「都市木造の新しい可能性〜新幹線高架下での実践を通じて〜」</p></div></li>
+    <li><time>17:30</time><div class="session"><span class="type qa">Q&A</span><p class="title">坂東 淳子＆Morita Sachiko</p></div></li>
+    <li><time>18:10</time><div class="session"><span class="type open">公募</span><p class="speaker">方山 れいこ</p><p class="title">「障害のある社会をデザインでどう変えていくか？」</p></div></li>
+    <li><time>18:30</time><div class="session"><span class="type keynote">Keynote</span><p class="speaker">面出 薫</p><p class="title">「照明デザインの楽しさ」</p><p class="title">「LPAと照明探偵団の活動を通じて…」</p></div></li>
+    <li><time>19:10</time><div class="session"><span class="type ">クロージング</span></div></li>
+    <li><time>19:40</time><div class="session"><span class="type ">撤収</span></div></li>
   </ol>
 </section>
-</div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <nav class="footer-nav">
+      <a href="/2025/">2025</a>
+      <a href="/2024/">2024</a>
+      <a href="/2023/">2023</a>
+      <a href="/2022/">2022</a>
+      <a href="/2021/">2021</a>
+      <a href="/2020/">2020</a>
+      <a href="/2019/">2019</a>
+      <a href="/2018/">2018</a>
+    </nav>
+    <nav class="footer-nav small">
+      <a href="https://www.designship.jp/" target="_blank" rel="noopener">運営会社</a>
+      <a href="/privacypolicy/">プライバシーポリシー</a>
+      <a href="/codeofconduct/">行動規範</a>
+      <a href="/brandresource/">ブランドリソース</a>
+    </nav>
+    <p class="copy">© Designship</p>
+  </div>
+</footer>
+
 </body>
 </html>
