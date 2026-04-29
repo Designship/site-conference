@@ -4,11 +4,14 @@
 </style><link href="https://fonts.googleapis.com/css?display=swap&amp;family=Montserrat%3A700" rel="stylesheet"/><link href="https://fonts.googleapis.com/css?display=swap&amp;family=Montserrat%3A900" rel="stylesheet"/><link href="https://fonts.googleapis.com/css?display=swap&amp;family=Montserrat%3A600" rel="stylesheet"/><link href="https://fonts.googleapis.com/css?display=swap&amp;family=Montserrat%3A400" rel="stylesheet"/><link href="https://fonts.googleapis.com/css?display=swap&amp;family=Noto+Sans+JP%3A700" rel="stylesheet"/><link href="https://fonts.googleapis.com/css?display=swap&amp;family=Noto+Sans+JP%3A900" rel="stylesheet"/><link href="https://fonts.studio.design/ts/ot-gothicmb101pr6n-bold/fonts.css" rel="stylesheet"/>
 <style id="timetable-injected-css">
 .tt-wrapper {
-  max-width: 880px; margin: 0 auto; padding: 80px 24px 120px;
+  max-width: 880px; margin: 0 auto; padding: 200px 24px 120px;
   font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, 'Hiragino Sans', sans-serif;
   color: #fff; line-height: 1.6;
-  position: relative; z-index: 5;
+  position: relative; z-index: 1;
 }
+/* Make sure the kept Studio nav stays clickable above tt-wrapper */
+.StudioCanvas nav.fixed { z-index: 1000 !important; }
+.StudioCanvas nav.fixed * { pointer-events: auto !important; }
 .tt-wrapper * { box-sizing: border-box; }
 .tt-wrapper h1 {
   font-family: 'Montserrat', 'Noto Sans JP', sans-serif;
@@ -50,17 +53,31 @@
 .tt-session .title { color: #fff !important; }
 .tt-wrapper .tt-day-h { color: #fff !important; }
 .tt-wrapper h1 { color: #fff !important; }
-/* current-page styling on the kept top nav */
-nav a.is-current-page,
-nav a[aria-current="page"] {
+/* Force nav link colours: all white by default, current page in pink with
+   underline. !important + multiple selectors to win against Studio's own CSS. */
+.StudioCanvas nav.fixed a,
+.StudioCanvas nav.fixed a > p,
+.StudioCanvas nav.fixed a * {
+  color: #fff !important;
+  text-decoration: none !important;
+}
+.StudioCanvas nav.fixed a.is-current-page,
+.StudioCanvas nav.fixed a[aria-current="page"],
+.StudioCanvas nav.fixed a.is-current-page > p,
+.StudioCanvas nav.fixed a[aria-current="page"] > p,
+.StudioCanvas nav.fixed a.is-current-page *,
+.StudioCanvas nav.fixed a[aria-current="page"] * {
   color: #ff8aac !important;
+}
+.StudioCanvas nav.fixed a.is-current-page,
+.StudioCanvas nav.fixed a[aria-current="page"] {
   position: relative;
 }
-nav a.is-current-page::after,
-nav a[aria-current="page"]::after {
+.StudioCanvas nav.fixed a.is-current-page::after,
+.StudioCanvas nav.fixed a[aria-current="page"]::after {
   content: ""; position: absolute;
   left: 50%; transform: translateX(-50%);
-  bottom: -6px; width: 16px; height: 2px;
+  bottom: 8px; width: 28px; height: 2px;
   background: #ff8aac; border-radius: 1px;
 }
 .tt-session .title {
