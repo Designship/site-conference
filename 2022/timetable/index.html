@@ -45,8 +45,24 @@
 .tt-qa      { background: rgba(94,168,255,0.18); color: #8ec0ff; border-color: transparent; }
 .tt-sponsor { background: rgba(255,200,0,0.18); color: #ffd87a; border-color: transparent; }
 .tt-open    { background: rgba(120,240,200,0.18); color: #8df0d0; border-color: transparent; }
-.tt-session .company { font-weight: 700; font-size: 17px; margin: 0 0 6px; color: #fff; }
-.tt-session .speaker { font-weight: 700; font-size: 17px; margin: 0 0 6px; }
+.tt-session .company { font-weight: 700; font-size: 17px; margin: 0 0 6px; color: #fff !important; }
+.tt-session .speaker { font-weight: 700; font-size: 17px; margin: 0 0 6px; color: #fff !important; }
+.tt-session .title { color: #fff !important; }
+.tt-wrapper .tt-day-h { color: #fff !important; }
+.tt-wrapper h1 { color: #fff !important; }
+/* current-page styling on the kept top nav */
+nav a.is-current-page,
+nav a[aria-current="page"] {
+  color: #ff8aac !important;
+  position: relative;
+}
+nav a.is-current-page::after,
+nav a[aria-current="page"]::after {
+  content: ""; position: absolute;
+  left: 50%; transform: translateX(-50%);
+  bottom: -6px; width: 16px; height: 2px;
+  background: #ff8aac; border-radius: 1px;
+}
 .tt-session .title {
   margin: 6px 0 0;
   color: #fff;
@@ -1441,7 +1457,7 @@
 }
 @media screen and (max-width: 320px){
 .sd[data-s-54b9b0ee-a230-4e67-a133-76a274efbd5c] { font-size: 18px; }
-}.sd[data-s-d4057246-525e-4a09-918e-47ad849cfa30] { color: #FFFFFF; font-size: 36px; margin: 0px 0px 1px 0px; max-width: 100%; }.sd[data-s-7fc4d2e6-1d14-4d46-9efe-ae621da382cf] {  }.sd[data-s-f7bf516f-fac1-4621-8978-257a62561ecd] { background: rgba(255, 255, 255, 0.15); border-radius: 0; flex: none; height: 0px; opacity: 1; padding: 0 0 0 0; width: 100%; max-width: 100%; }</style><style data-v-74fe0335="">body { background: #1b1d28; transition: background 0.5s cubic-bezier(0.4, 0.4, 0, 1); }</style><!-- --><style></style><div aria-live="assertive" class="TitleAnnouncer" data-v-1a8a037a="">Designship 2022 | 業界の壁を越えた、日本最大級のデザインカンファレンス 読み込まれました</div><div aria-atomic="true" aria-live="assertive" class="DynamicAnnouncer" data-v-cc1e3fda=""></div><!-- --><div><div class="modals"></div><div aria-hidden="false" class="StudioCanvas"><div class="sd appear" data-s-cdaacbb4-b708-4f86-a90a-ca5125e45f5f=""><nav class="fixed sd appear" data-s-256e4cbe-3c6b-4012-93c0-84293acbdac2=""><div class="sd appear" data-s-68158658-a1fd-4bb9-ac13-bec99c9edd1c="" tabindex="0"><div class="sd appear" data-s-73c9351f-24f2-4f6f-a073-f6092763e92a="" tabindex="0"><a class="link sd appear" data-s-cd98918c-4201-4798-902d-f09acd9b717e="" href="/2022"><p class="text sd appear" data-r-0_0_0_0_0_a8745473-3ec0-42e6-a309-b522c09c65c8="" data-s-a8745473-3ec0-42e6-a309-b522c09c65c8="">About</p><div class="sd appear" data-s-f9d463b4-d26d-49b8-b766-7b425c02bbf1=""></div></a><a class="link sd appear" data-s-90e8a307-30af-42d8-b74c-c3d2a21e299a="" href="/2022/session"><p class="text sd appear" data-r-0_1_0_0_0_45295f26-9d6e-42c2-98f6-e0799df659b4="" data-s-45295f26-9d6e-42c2-98f6-e0799df659b4="">Session<br/></p><div class="sd appear" data-s-763b761e-9c0a-4491-9129-88f2702f0b50=""></div></a><a class="link sd appear" data-s-92c7c2dc-6965-4261-9945-d19e1717797a="" href="/2022/timetable"><p class="text sd appear" data-r-0_2_0_0_0_7ff08b2f-cfb5-4f86-986c-0699c6a902a7="" data-s-7ff08b2f-cfb5-4f86-986c-0699c6a902a7="">Timetable</p><div class="sd appear" data-s-21b6ba07-0f43-4370-a059-37c805715819=""></div></a></div></div></nav><div class="tt-wrapper">
+}.sd[data-s-d4057246-525e-4a09-918e-47ad849cfa30] { color: #FFFFFF; font-size: 36px; margin: 0px 0px 1px 0px; max-width: 100%; }.sd[data-s-7fc4d2e6-1d14-4d46-9efe-ae621da382cf] {  }.sd[data-s-f7bf516f-fac1-4621-8978-257a62561ecd] { background: rgba(255, 255, 255, 0.15); border-radius: 0; flex: none; height: 0px; opacity: 1; padding: 0 0 0 0; width: 100%; max-width: 100%; }</style><style data-v-74fe0335="">body { background: #1b1d28; transition: background 0.5s cubic-bezier(0.4, 0.4, 0, 1); }</style><!-- --><style></style><div aria-live="assertive" class="TitleAnnouncer" data-v-1a8a037a="">Designship 2022 | 業界の壁を越えた、日本最大級のデザインカンファレンス 読み込まれました</div><div aria-atomic="true" aria-live="assertive" class="DynamicAnnouncer" data-v-cc1e3fda=""></div><!-- --><div><div class="modals"></div><div aria-hidden="false" class="StudioCanvas"><div class="sd appear" data-s-cdaacbb4-b708-4f86-a90a-ca5125e45f5f=""><nav class="fixed sd appear" data-s-256e4cbe-3c6b-4012-93c0-84293acbdac2=""><div class="sd appear" data-s-68158658-a1fd-4bb9-ac13-bec99c9edd1c="" tabindex="0"><div class="sd appear" data-s-73c9351f-24f2-4f6f-a073-f6092763e92a="" tabindex="0"><a class="link sd appear" data-s-cd98918c-4201-4798-902d-f09acd9b717e="" href="/2022"><p class="text sd appear" data-r-0_0_0_0_0_a8745473-3ec0-42e6-a309-b522c09c65c8="" data-s-a8745473-3ec0-42e6-a309-b522c09c65c8="">About</p><div class="sd appear" data-s-f9d463b4-d26d-49b8-b766-7b425c02bbf1=""></div></a><a class="link sd appear" data-s-90e8a307-30af-42d8-b74c-c3d2a21e299a="" href="/2022/session"><p class="text sd appear" data-r-0_1_0_0_0_45295f26-9d6e-42c2-98f6-e0799df659b4="" data-s-45295f26-9d6e-42c2-98f6-e0799df659b4="">Session<br/></p><div class="sd appear" data-s-763b761e-9c0a-4491-9129-88f2702f0b50=""></div></a><a aria-current="page" class="link sd appear is-current-page" data-s-92c7c2dc-6965-4261-9945-d19e1717797a="" href="/2022/timetable"><p class="text sd appear" data-r-0_2_0_0_0_7ff08b2f-cfb5-4f86-986c-0699c6a902a7="" data-s-7ff08b2f-cfb5-4f86-986c-0699c6a902a7="">Timetable</p><div class="sd appear" data-s-21b6ba07-0f43-4370-a059-37c805715819=""></div></a></div></div></nav><div class="tt-wrapper">
 <h1>Timetable</h1>
 <p class="tt-subtitle">セッションの開始時刻 / 終了時刻は進行状況により変動する可能性があります。</p>
 <section class="tt-day">
